@@ -17,7 +17,7 @@ pod_update_time = 0.5
 local timer = require ("main.timer")
 
 function get_help()
-	msg.post("ui#gui","help",{ position = vmath.vector3(24, 680, 0) })
+	msg.post("ui#gui","help",{ position = vmath.vector3(500, 620, 0) })
 end
 
 function quit_help()
@@ -168,7 +168,7 @@ function ai()
 		rand_pos = math.random(100, 1100)
 	end
 	pos = go.get_position()
-	pos.y = 220
+	pos.y = 500
 	go.set_position(pos)	
 	pos.x = rand_pos
 
@@ -187,7 +187,7 @@ function ai()
 		go.animate(go.get_id(), "position.x", go.PLAYBACK_ONCE_FORWARD, pos.x, go.EASING_INQUAD, 1,0, function()
 			pos = go.get_position()		
 			bullet = factory.create("/bullet#bulletfactory", pos)
-			go.animate(bullet, "position.y", go.PLAYBACK_ONCE_FORWARD, 700, go.EASING_INQUAD, 1,0,function()
+			go.animate(bullet, "position.y", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_INQUAD, 1,0,function()
 				go.delete(bullet)
 			end)	
 		end)
@@ -251,7 +251,7 @@ function http_pod_result(self, _, response)
 	check_above = false
 	a = 0
 	distance_between_pods = 1000 / pod_items_size
-	y_pos = 600
+	y_pos = 120
 	space_between_factor = 0
 	
 	if pod_items_size <= alien_proximity_factor then
@@ -451,9 +451,9 @@ function on_input(self, action_id, action)
 			end
 			if shot == true then
 				local pos = go.get_position()
-				local to = pos.y + 2 * 64
+				local to = pos.y - 2 * 64
 				local bullet = factory.create("/bullet#bulletfactory", pos)
-				go.animate(bullet, "position.y", go.PLAYBACK_ONCE_FORWARD, 700, go.EASING_INQUAD, 1,0,function()
+				go.animate(bullet, "position.y", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_INQUAD, 1,0,function()
 					go.delete(bullet)
 				end)
 				last_hit_time = os.clock()

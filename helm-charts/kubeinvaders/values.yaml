@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: luckysideburn/kubeinvaders
-  tag: latest
+  repository: shpwrck/kubeinvaders
+  tag: rancher
   pullPolicy: IfNotPresent
 
 nameOverride: ""

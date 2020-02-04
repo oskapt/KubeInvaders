@@ -4,5 +4,5 @@ metadata:
   name: source-vars
 data:
   MY_NAMESPACE: kubeinvaders
-  TARGET_NAMESPACE: rancher-demo
-  ROUTE_HOST: kubeinvaders.cl.monach.us
+  TARGET_NAMESPACE: default
+  ROUTE_HOST: "157-245-5-230.nip.io"

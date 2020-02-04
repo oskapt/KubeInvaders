@@ -5,4 +5,4 @@ metadata:
 data:
   MY_NAMESPACE: kubeinvaders
   TARGET_NAMESPACE: default
-  ROUTE_HOST: ki.157-230-202-82.nip.io
+  ROUTE_HOST: "157-245-5-230.nip.io"
